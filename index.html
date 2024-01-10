@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Thiết lập ký tự mã -->
+    <meta charset="UTF-8">
+    <!-- Thiết lập thước đo và tỷ lệ ban đầu của trang -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tiêu đề của trang -->
+    <title>Chuyển vị Ma trận</title>
+    <!-- Liên kết đến bộ CSS của Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Liên kết đến tệp CSS tùy chỉnh -->
+    <link rel="stylesheet" href="Assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Phần đầu trang -->
+    <header>
+        <div class="header">
+            <!-- Tiêu đề chính -->
+            <h3>MINH HỌA PHÉP CHUYỂN VỊ MA TRẬN</h3>
+        </div>
+    </header>
+
+    <!-- Phần chính của trang -->
+    <main>
+        <!-- Hàng chứa các thành phần nhập liệu -->
+        <div class="row">
+            <div>
+                <!-- Nhãn và ô nhập liệu cho số hàng -->
+                <label for="rows">Số hàng</label>
+                <input type="number" id="rows" min="1" value="3">&ensp;
+                <!-- Nhãn và ô nhập liệu cho số cột -->
+                <label for="cols">Số cột</label>
+                <input type="number" id="cols" min="1" value="3">&ensp;
+                <!-- Nút tạo ma trận -->
+                <button class="btn btn-primary" onclick="createMatrix()">Tạo Ma trận</button>
+            </div>
+        </div>
+
+        <!-- Container chứa các thành phần của ma trận và kết quả chuyển vị -->
+        <div class="container">
+            <div id="matrixContainer"></div>
+            <div id="transposedMatrixContainer"></div>
+        </div>
+
+        <!-- Phần chân trang -->
+        <div class="footer">
+            <div>
+                <!-- Nút thực hiện chuyển vị -->
+                <button onclick="performTranspose()" class="btn btn-primary btn-transpose">Thực hiện Chuyển vị</button>
+                <!-- Nút tạm dừng/tiếp tục -->
+                <button onclick="pauseTranspose()" class="btn btn-danger " id="pauseResumeButton">Tạm dừng</button>
+                <!-- Nút reset -->
+                <button onclick="resetMatrix()" class="btn btn-warning btn-reset">Reset</button>
+            </div>
+
+            <!-- Thanh trượt điều chỉnh tốc độ -->
+            <div id="speedContainer">
+                <label for="speed">Tốc độ:</label>
+                <input type="range" min="0" max="2000" value="500" class="slider" id="speed">
+                <span id="speedValue">500 ms</span>
+            </div>
+
+            <!-- Thông báo trạng thái -->
+            <div id="statusMessage"></div>
+        </div>
+    </main>
+    
+    <script src="Assets/js/transpose.js"></script>
+</body>
+
+</html>

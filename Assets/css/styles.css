@@ -1,0 +1,183 @@
+/* Thiết lập các thuộc tính cơ bản cho trang */
+body {
+    margin: 0;
+    padding: 0;
+    color: #c6c6c6;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    padding: 20px;
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Phần header của trang */
+.header {
+    text-align: center;
+    color: #a79419e2;
+    margin: 40px;
+}
+
+/* Kiểu chữ cho tiêu đề */
+.header h3 {
+    font-weight: 600;
+}
+
+/* Phần nhập liệu số hàng và số cột */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.row div {
+    margin-bottom: 10px;
+}
+
+/* Ma trận gốc và ma trận chuyển vị */
+.matrangoc {
+    float: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: #1f69b9;
+}
+
+.matranchuyenvi {
+    float: right;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: #1f69b9;
+}
+
+/* Phần container chứa ma trận và kết quả chuyển vị */
+.container {
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.container #matrixContainer {
+    width: 50%;
+    float: left;
+}
+
+.container #transposedMatrixContainer {
+    float: right;
+}
+
+/* Phần footer của trang */
+.footer {
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer button {
+    margin: 0 5px;
+}
+
+/* Ẩn nút reset và nút transpose ban đầu */
+.btn-reset,
+.btn-transpose {
+    display: none;
+}
+
+/* Thiết lập kiểu cho label */
+label {
+    margin-right: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Thiết lập kiểu cho input */
+input {
+    width: 50px;
+    height: 30px;
+    /* border: 1px solid #007bff; */
+    border-radius: 5px;
+    border: 2px solid #f3f3f9;
+    text-align: center;
+    background-color: #cccccccc;
+}
+
+input:hover,
+input:focus,
+button:focus {
+    outline: none;
+    border-color: #136bca;
+}
+
+/* Thiết lập kiểu cho button và hover/focus */
+button:hover,
+button:focus {
+    background-color: #136bca;
+    border-color: #136bca;
+}
+
+/* Thiết lập kiểu cho input trong ma trận */
+.matrix-input,
+.matrix-output {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    margin-right: 5px;
+    min-height: 40px;
+    overflow-y: auto;
+    font-weight: 500;
+    background-color: #d6d6d6;
+}
+
+/* Thiết lập kiểu cho hàng trong ma trận */
+.matrix-row {
+    margin-bottom: 10px;
+}
+
+/* Thiết lập kiểu cho ô trong ma trận */
+.matrix-cell {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+/* Hiệu ứng flash */
+.flash {
+    animation: flashAnimation 1s infinite alternate;
+}
+
+@keyframes flashAnimation {
+    from {
+        background-color: #bff128;
+    }
+
+    to {
+        background-color: #66d6c9;
+    }
+}
+
+/* Phần hiển thị trạng thái */
+#statusMessage {
+    margin-top: 15px;
+    color: #9ccca8;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Ẩn nút pause/resume ban đầu */
+#pauseResumeButton {
+    display: none;
+}
+
+/* CSS cho thanh trượt */
+input[type="range"] {
+    width: 20%;
+}
+
+/* Hiển thị giá trị tốc độ */
+span#speedValue {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Container chứa thanh trượt tốc độ */
+#speedContainer {
+    margin-top: 10px;
+    display: none;
+}
